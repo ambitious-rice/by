@@ -1,0 +1,341 @@
+.w {
+    margin: 0 auto;
+    width: 1200px;
+}
+body {
+    background-color: #f7f7f7;
+    height: 2000px;
+}
+@font-face {
+    font-family: "iconfont"; /* Project id  */
+    src: url('../font/iconfont.ttf?t=1646041152953') format('truetype');
+        }
+        .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+/* 首页整体 */
+.ww {
+    margin-left: 245px ;
+    margin-right: 260px;
+    width: 1200px;
+}
+.navTop {
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    height: 64px;
+    background-color: white;
+}
+/* logo设计 */
+.logo {
+    float: left;
+    margin-top: 16px;
+}
+.logo img {
+    width: 217px;
+    height: 32px;
+}
+/* nav设计 */
+.nav {
+    float: left;
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.nav li {
+    float: left;
+    font-size: 16px;
+    margin-left: 36px;
+}
+.nav li a {
+    color: black;
+}
+.nav li a:hover {
+    color: #41b265;
+}
+/* 搜索框制作 */
+.search {
+    position: absolute;
+    top: 15px;
+    left: 1060px;
+    user-select:none;
+}
+.search .search_lf {
+    border-radius: 18px;
+    float: left;
+    border: 1.4px solid #86e6bf;
+    width: 260px;
+    height: 37px;
+    line-height: 35px;
+    position: absolute;
+}
+.search .search_lf input {
+    top: 4px;
+    left: 11px;
+    position: absolute;
+    height: 28px;
+    width: 200px;
+    margin-left: 10px;
+    font-size: 9px;
+    color: #000;
+}
+.search  button {
+    margin-top: 1.4px;
+    border-radius: 17px;
+    left: 203px;
+    position: absolute;
+    background-color: #27cd7f;
+    width: 56px;
+    height: 34px;
+    color: white;
+    font-family:"iconfont" ;
+    font-size: 23px;
+}
+/* 右侧登录按钮 */
+.login {
+    float: left;
+    position: absolute;
+    right: 260px;
+    top: 23px;
+    font-size: 14px;
+}
+.login a {
+    color: black;
+}
+.login a:hover {
+    color: #41b265;
+}
+/* 首页制作结束 */
+/* 开始main部分制作 */
+/* 左侧栏制作 */
+.main {
+    margin-top: 10px;
+    height: 363px;
+}
+.main .main-left {
+    width: 200px;
+    height: 360px;
+    background-color: white;
+    padding-top: 8px;
+    border-radius: 10px;
+    float: left;
+
+}
+.main .left-top {
+    width: 100%;
+    height: 321px;
+    overflow: hidden;
+}
+.main .main-left  ul li {
+    padding-right: 21px;
+    margin-top: 5px;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom-color: #333;
+    color: #999;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: -10px;
+}
+.main .main-left ul li a {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+
+}
+.main .main-left ul li span {
+    padding-left: 10px;
+    font-size: 12px;
+    color: #999;
+}
+.main .main-left ul li span a {
+    font-size: 12px;
+    color: #999;
+}
+.main .main-left ul li:hover {
+    background-color: #e6f9ee;
+    color:#27cd7f;
+}
+.left-more {
+    color: black;
+    font-size: 14px;
+    width: 200px;
+    height: 34px;
+    padding-left:10px;
+}
+/* 开始制作轮播图 */
+.main-lb {
+    float: left;
+    margin-left: 10px;
+    height: 360px;
+    width: 776px;
+    background-color: pink;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.main-lb .focus {
+    width: 5500px;
+    position: absolute;
+}
+.main-lb .focus li {
+    float: left;
+}
+.main-lb .focus li a img {
+    width: 776px;
+}
+.main-lb .next {
+    padding-left: 3px;
+    right: 18px;
+
+}
+.main-lb .last,
+.main-lb .next {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,.3);
+    z-index: 999;
+    border-radius: 24px;
+    top: 45%;
+    font-family: "iconfont";
+    user-select: none;
+}
+.main-lb .last {
+    padding-right: 3px;
+    left: 18px;
+}
+.main-lb .last:hover {
+    background-color: rgba(0,0,0,.6);
+}
+.main-lb .next:hover {
+    background-color: rgba(0,0,0,.6);
+}
+.main-lb .button {
+    position: absolute;
+    z-index: 999;
+    bottom: 20px;
+    left: 26px;
+}
+.main-lb .button li {
+    float: left;
+    height: 14px;
+    width: 14px;
+    border-radius: 7px;
+    background-color: transparent;
+    text-align: center;
+    margin:0 2px;
+    user-select: none;
+    cursor: pointer;
+}
+.main-lb .button li span {
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.2);
+    /* background-color: rgba(255,255,255,.8); */
+    float: left;
+    margin: 2px 2px;
+}
+.main-lb .button .current_out {
+    background-color: rgba(0,0,0,.2);
+}
+.main-lb .button li .current_in {
+    background-color: rgba(255,255,255,.8);
+}
+/* 轮播图制作完成 */
+
+/* 开始制作右侧界面 */
+.main-right {
+    border-radius: 10px;
+    position: relative;
+    margin-left: 10px;
+    height: 360px;
+    width: 197px;
+    background-color: #fff;
+    float: left;
+}
+.main-right h3 {
+    margin-left: 18px;
+    margin-top: 25px;
+    width: 160px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+}
+.main-right img {
+    position: absolute;
+    top: 114px;
+    left: 65px;
+    width: 72px;
+    height: 72px;
+}
+.main-right a {
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    position: absolute;
+    color: white;
+    background-color: #00CC7E;
+    width: 168px;
+    height: 32px;
+    border-radius: 18px;
+    top: 206px;
+    left: 20px;
+}
+.main-right div {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+}
+/* 右侧界面制作完成 */
+/* main部分制作完成 */
+/* school部分开始制作 */
+.school {
+    margin-top: 10px;
+    background-color: #fff;
+    height: 60px;
+    padding-left: 20px;
+    line-height: 60px;
+    border-radius: 10px;
+}
+.school>a {
+    height: 100%;
+    float: left;
+    width: 178px;
+    font-size: 16px;
+    line-height: 60px;
+}
+.school>a span {
+    font-size: 18px;
+    color: #ccc;
+    font-family: "iconfont";
+    float: right;
+    margin-right: 19px;
+    margin-top: 1px;
+}
+.school ul li {
+    float: left;
+    margin-left: 55px;
+}
+.school ul li img {
+    height: 38px;
+    margin-right: 10px;
+}
+/* school部分结束制作 */
