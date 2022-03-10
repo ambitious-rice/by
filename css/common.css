@@ -50,12 +50,109 @@ body {
     font-size: 16px;
     margin-left: 36px;
 }
+.nav-school::after {
+    content: "\e60d";
+    font-family: "iconfont";
+    display: inline-block;
+    color: #c6c6c6;
+    font-size: 12px;
+    margin-left: 2px;
+    transition: all .3s;
+}
+.nav-school:hover:after {
+    transition: all .3;
+    transform: rotate(180deg);
+}
+
 .nav li a {
     color: black;
 }
 .nav li a:hover {
     color: #41b265;
 }
+/* 开始下拉栏制作 */
+.dropdown {
+    box-shadow: 1px 0px 10px #888;
+    top: 61px;
+    left: 365px;;
+    z-index: 999;
+    position: absolute;
+    background-color: #fff;
+    width: 662px;
+    height: 441px;
+    /* display: none; */
+}
+.dropdown::after {
+    position: absolute;
+    display: inline-block;
+    top: -10px;
+    left: 176px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: #fff #fff transparent transparent;
+    transform: rotate(315deg);
+    box-shadow: 2px -2px 2px #ccc;
+}
+
+.dropdown .inner {
+    position: absolute;
+    margin-left: 28px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 26px;
+}
+.dropdown .university {
+    margin-top: 20px;
+    height: 130px;
+}
+.dropdown .employ {
+    height: 140px;
+}
+.dropdown .learn {
+    height: 120px;
+}
+.dropdown h3 {
+    float: left;
+    font-size: 16px;
+    color: black;
+}
+.dropdown ul {
+    float:left;
+    width: 600px;
+}
+.dropdown li {
+    margin-top: 10px;
+    float: left;
+    width: 110px;
+    height: 32px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    text-align: center;
+    margin-right: 10px;
+    line-height: 30px;
+}
+.dropdown li:hover {
+    background-color: #e6f9ee;
+}
+.dropdown li:hover a {
+    color: #21c85b;
+}
+.dropdown li a {
+    color: #363636;
+    font-size: 13.5px;
+    font-weight: 450;
+}
+.dropdown .word {
+    font-size: 14px;
+    position: absolute;
+    left:0;
+    top: -10px;
+    color: #999;
+}
+/* 结束下拉栏制作 */
 /* 搜索框制作 */
 .search {
     position: absolute;
@@ -126,11 +223,11 @@ body {
 }
 .main .left-top {
     width: 100%;
-    height: 321px;
+    height: 315px;
     overflow: hidden;
 }
 .main .main-left  ul li {
-    padding-right: 21px;
+    padding-right: 23px;
     margin-top: 5px;
     height: 30px;
     width: 100%;
@@ -163,12 +260,24 @@ body {
     background-color: #e6f9ee;
     color:#27cd7f;
 }
+.main .main-left ul li:hover a {
+    color:#27cd7f;
+}
+.main .main-left ul li a:hover {
+    text-decoration: underline;
+}
 .left-more {
+    margin-top: 4px;
     color: black;
     font-size: 14px;
     width: 200px;
     height: 34px;
     padding-left:10px;
+}
+.left-more span {
+    font-family: "iconfont";
+    font-weight: 700;
+    color: #d2d2d2;
 }
 /* 开始制作轮播图 */
 .main-lb {
@@ -298,6 +407,9 @@ body {
     border-radius: 18px;
     top: 206px;
     left: 20px;
+}
+.main-right a:hover {
+    background-color: #21b36f;
 }
 .main-right div {
     position: absolute;
