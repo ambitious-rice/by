@@ -80,7 +80,7 @@ body {
     background-color: #fff;
     width: 662px;
     height: 441px;
-    /* display: none; */
+    display: none;
 }
 .dropdown::after {
     position: absolute;
@@ -307,7 +307,7 @@ body {
 }
 .main-lb .last,
 .main-lb .next {
-    display: none;
+    /* display: none; */
     cursor: pointer;
     font-size: 25px;
     font-weight: 700;
@@ -451,3 +451,102 @@ body {
     margin-right: 10px;
 }
 /* school部分结束制作 */
+/* recommend部分开始制作 */
+.recommend {
+    position: relative;
+}
+.recommend h1 {
+    font-weight: 400;
+    color:black;
+    font-size: 24px;
+    margin-top: 15px;
+}
+.recommend .next,
+.recommend .last {
+    font-family:"iconfont";
+    position :absolute;
+    font-size: 50px;
+    color: #cecece;
+    font-weight: 300;
+    cursor: pointer;
+}
+.recommend .next {
+    right: 195px;
+    top: 172px;
+}
+.recommend .next:hover,
+.recommend .last:hover {
+    color: #9c9c9c;
+}
+.recommend .last {
+    left: 195px;
+    top: 172px;
+    font-size: 50px;
+    color: #d2d2d2;
+}
+.recommend .show {
+    width: 1207px;
+    height: 468px;
+    position: absolute;
+    overflow: hidden;
+}
+.recommend ul {
+    position: absolute;
+    width: 2500px;
+}
+.recommend ul li {
+    margin-top: 20px;
+    float: left;
+    margin-right: 20.6px;
+    transition: all .3s;
+    border-radius: 10px;
+}
+.recommend ul li:hover {
+    box-shadow: 2px 2px 4px 5px rgb(228, 225, 225); 
+}
+.recommend ul li a {
+    display: block;
+    height: 292px;
+    width: 223px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+.recommend ul li a img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.recommend ul li a h3 {
+    color: #333;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.recommend ul li a h5 {
+    color: #666;
+    font-weight: 400;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.recommend ul li a h6 {
+    position: absolute;
+    bottom: 57px;
+    left: 10px;
+    font-weight: 400;
+    color: #666;
+}
+.recommend ul li a div {
+    padding-left: 8px;
+    padding-top: 8px;
+    position: absolute;
+    height: 50px;
+    width: 204px;
+    background-color: #f8f9fb;
+    bottom:6px;
+    left: 10px;
+    border-radius: 8px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* recommend部分结束制作 */
