@@ -542,6 +542,7 @@ body {
   color: #cecece;
   font-weight: 300;
   cursor: pointer;
+  z-index: 99;
 }
 
 .recommend .next {
@@ -559,6 +560,7 @@ body {
   top: 172px;
   font-size: 50px;
   color: #d2d2d2;
+  display: none;
 }
 
 .recommend .show {
@@ -819,3 +821,90 @@ body {
 }
 
 /* 结束制作range部分 */
+/* 开始制作侧边栏 */
+.sidebar {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  border-collapse: collapse;
+}
+
+.sidebar a {
+  border-radius: 5px;
+}
+
+.sidebar a img {
+  border-radius: 5px;
+}
+
+.sidebar .plan {
+  margin-top: 10px;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  padding: 10px 5px;
+  width: 40px;
+  height: 100px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #27cd7f;
+  border-radius: 5px;
+}
+
+.side-bot {
+  color: #00CC7E;
+  margin-top: 10px;
+  color: #3d3d3d;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px rgb(219, 217, 217) solid;
+  border-radius: 5px;
+}
+
+.side-bot .sidefont {
+  color: #3d3d3d;
+  font-family: "iconfont";
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.side-bot>div {
+  height: 60px;
+  padding-top: 12px;
+}
+
+.side-bot>div:hover {
+  background-color: #27cd7f;
+}
+
+.side-bot>div:hover a {
+  border: 0;
+  color: #fff;
+}
+
+.side-bot>div:hover .sidefont {
+  color: #fff;
+}
+
+.side-bot>div a {
+  display: block;
+  width: 25px;
+  border-bottom: #ccc 1px solid;
+  margin-left: 7px;
+  border-radius: 0;
+}
+
+.side-bot .sideword {
+  font-size: 12px;
+}
+
+.side-bot .backtop {
+  transition: all .3s;
+}
+
+.side-bot .backtop a {
+  border-bottom: 0;
+}
+
+/* 结束制作侧边栏 */

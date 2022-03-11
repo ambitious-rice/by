@@ -51,7 +51,6 @@ window.addEventListener('load',function(){
             }
             change();
             num++;
-            console.log(num);
             animate(focus,-num*width,function() {
                 flag=true;
             });

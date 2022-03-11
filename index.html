@@ -11,11 +11,14 @@
   <link rel="stylesheet" href="css/common.css">
   <script src="js/animate.js"></script>
   <script src="js/lunbo.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/recommend.js"></script>
+  <script src="js/range.js"></script>
 </head>
 
 <body>
   <!-- 顶部导航栏开始制作 -->
-  <div class="navTop ">
+  <div class="navTop" id="nav">
     <div class="ww">
       <a href="https://www.icourse163.org/" class="logo"> <img src="images/logo.png" alt=""></a>
       <ul class="nav">
@@ -85,29 +88,43 @@
     <div class="main-left" id="dd">
       <ul class="left-top">
         <li><a href="#">国家精品</a></li>
-        <li><a href="">计算机</a><span><a href="">大数据与人工智能</a>/55555585</span></li>
-        <li><a href="">外语</a><span><a href="">听力</a>/<a href="">口语</a>/<a href="">写作</a>/<a href="">翻译</a></span></li>
-        <li><a href="">理学农学工学</a><span><a href="">数学</a>/<a href="">物理</a>/99999</span></li>
-        <li><a href="">2023考研</a><span><a href="">数学</a>/<a href="">英语</a>/<a href="">政治</a>/</span></li>
-        <li><a href="">期末不挂科</a><span><a href="">数学不挂科</a>/<a href="">物理不挂科</a>/</span></li>
-        <li><a href="">大学应试英语</a><span><a href="">四六级</a>/<a href="">考研英语</a>/</span></li>
-        <li><a href="">考编·考证</a><span><a href="">公务员考试</a>/<a href="">事业单位</a>/</span></li>
-        <li><a href="">求职就业</a><span><a href="">互联网求职</a>/<a href="">数据</a></span></li>
-        <li><a href="">经济管理</a><span><a href="">教学方法</a>/<a href="">教学能力</a>/数据分析</span></li>
-        <li><a href="">心理学</a></li>
-        <li><a href="">文史哲法</a><span><a href="">文学文化</a>/<a href="">新闻传播</a>/</span></li>
-        <li><a href="">医学与保健</a><span><a href="">体育教育</a>/<a href="">基础医学</a>/</span></li>
-        <li><a href="">教育教学</a><span><a href="">教学方法</a>/<a href="">教学能力</a>/</span></li>
-        <li><a href="">音乐与艺术</a><span><a href="">艺术学</a>/<a href="">美术学</a>/</span></li>
-        <li><a href="">专升本</a><span><a href="">河南</a>/<a href="">广东</a>/<a href="">浙江</a>/</span></li>
-        <li><a href="">有声课堂</a><span><a href="">热门专栏</a>/<a href="">情商</a>/</span></li>
+        <li><a href="javascript:;">计算机</a><span><a href="javascript:;">大数据与人工智能</a>/55555585</span></li>
+        <li><a href="javascript:;">外语</a><span><a href="javascript:;">听力</a>/<a href="javascript:;">口语</a>/<a
+              href="javascript:;">写作</a>/<a href="javascript:;">翻译</a></span></li>
+        <li><a href="javascript:;">理学农学工学</a><span><a href="javascript:;">数学</a>/<a
+              href="javascript:;">物理</a>/99999</span></li>
+        <li><a href="javascript:;">2023考研</a><span><a href="javascript:;">数学</a>/<a href="javascript:;">英语</a>/<a
+              href="javascript:;">政治</a>/</span></li>
+        <li><a href="javascript:;">期末不挂科</a><span><a href="javascript:;">数学不挂科</a>/<a
+              href="javascript:;">物理不挂科</a>/</span></li>
+        <li><a href="javascript:;">大学应试英语</a><span><a href="javascript:;">四六级</a>/<a
+              href="javascript:;">考研英语</a>/</span></li>
+        <li><a href="javascript:;">考编·考证</a><span><a href="javascript:;">公务员考试</a>/<a
+              href="javascript:;">事业单位</a>/</span></li>
+        <li><a href="javascript:;">求职就业</a><span><a href="javascript:;">互联网求职</a>/<a href="javascript:;">数据</a></span>
+        </li>
+        <li><a href="javascript:;">经济管理</a><span><a href="javascript:;">教学方法</a>/<a
+              href="javascript:;">教学能力</a>/数据分析</span></li>
+        <li><a href="javascript:;">心理学</a></li>
+        <li><a href="javascript:;">文史哲法</a><span><a href="javascript:;">文学文化</a>/<a href="javascript:;">新闻传播</a>/</span>
+        </li>
+        <li><a href="javascript:;">医学与保健</a><span><a href="javascript:;">体育教育</a>/<a
+              href="javascript:;">基础医学</a>/</span></li>
+        <li><a href="javascript:;">教育教学</a><span><a href="javascript:;">教学方法</a>/<a href="javascript:;">教学能力</a>/</span>
+        </li>
+        <li><a href="javascript:;">音乐与艺术</a><span><a href="javascript:;">艺术学</a>/<a href="javascript:;">美术学</a>/</span>
+        </li>
+        <li><a href="javascript:;">专升本</a><span><a href="javascript:;">河南</a>/<a href="javascript:;">广东</a>/<a
+              href="javascript:;">浙江</a>/</span></li>
+        <li><a href="javascript:;">有声课堂</a><span><a href="javascript:;">热门专栏</a>/<a href="javascript:;">情商</a>/</span>
+        </li>
       </ul>
       <div class="left-more">更多 <span>&#xe688;</span></div>
     </div>
     <!-- 左侧界面制作结束 -->
     <!-- 轮播图制作开始 -->
     <div class="main-lb">
-      <span class="next">&#xe68a;</span>
+      <span class="next">&#xe689;</span>
       <span class="last">&#xe685;</span>
       <ul class="button">
       </ul>
@@ -125,7 +142,7 @@
     <div class="main-right">
       <h3>免费学习来自名校名师的精品课程</h3>
       <img src="images/user.png" alt="">
-      <a href="">登录/注册</a>
+      <a href="javascript:;">登录/注册</a>
       <div>网易和高等教育出版社出品</div>
     </div>
     <!-- 右侧界面制作结束 -->
@@ -133,19 +150,19 @@
   <!-- 主体界面制作结束 -->
   <!-- 学校介绍界面 武大位置换成华科了:) -->
   <div class="school w">
-    <a href="">全部801所合作高校<span>&#xe666;</span></a>
+    <a href="javascript:;">全部801所合作高校<span>&#xe666;</span></a>
     <ul>
-      <li><a href=""><img src="images/school04.png" alt=""></a></li>
-      <li><a href=""><img src="images/school02.png" alt=""></a></li>
-      <li><a href=""><img src="images/school03.png" alt=""></a></li>
-      <li><a href=""><img src="images/school01.png" alt=""></a></li>
-      <li><a href=""><img src="images/school05.png" alt=""></a></li>
+      <li><a href="javascript:;"><img src="images/school04.png" alt=""></a></li>
+      <li><a href="javascript:;"><img src="images/school02.png" alt=""></a></li>
+      <li><a href="javascript:;"><img src="images/school03.png" alt=""></a></li>
+      <li><a href="javascript:;"><img src="images/school01.png" alt=""></a></li>
+      <li><a href="javascript:;"><img src="images/school05.png" alt=""></a></li>
     </ul>
   </div>
   <!-- 学校界面制作完成 -->
   <!-- recommend部分开始制作 -->
   <div class="recommend">
-    <div class="next">&#xe68a;</div>
+    <div class="next">&#xe689;</div>
     <div class="last">&#xe685;</div>
     <div class="w clearfix">
       <h1>编辑推荐</h1>
@@ -256,12 +273,12 @@
           <span>TOP50</span>
           <span>POPULAR COURSES</span>
         </div>
-        <span class="next">&#xe68a;</span>
+        <span class="next">&#xe689;</span>
         <span class="last">&#xe685;</span>
         <div class="show">
           <ul>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>1</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -272,7 +289,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>2</span>
                 <img src="update/hot02.jpg" alt="">
                 <div class="topic">
@@ -283,7 +300,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>3</span>
                 <img src="update/hot03.jpg" alt="">
                 <div class="topic">
@@ -294,7 +311,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>4</span>
                 <img src="update/hot04.jpg" alt="">
                 <div class="topic">
@@ -305,7 +322,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot05.jpg" alt="">
                 <div class="topic">
@@ -316,7 +333,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -327,7 +344,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -338,7 +355,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -349,7 +366,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -360,7 +377,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/hot01.jpg" alt="">
                 <div class="topic">
@@ -379,12 +396,12 @@
           <span></span>
           <span>NEW COURSES</span>
         </div>
-        <span class="next">&#xe68a;</span>
+        <span class="next">&#xe689;</span>
         <span class="last">&#xe685;</span>
         <div class="show">
           <ul>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>1</span>
                 <img src="update/range01.jpg" alt="">
                 <div class="topic">
@@ -395,7 +412,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>2</span>
                 <img src="update/range02.jpg" alt="">
                 <div class="topic">
@@ -406,7 +423,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>3</span>
                 <img src="update/range03.jpg" alt="">
                 <div class="topic">
@@ -417,18 +434,18 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>4</span>
                 <img src="update/range04.jpg" alt="">
                 <div class="topic">
                   <p>英语演讲</p>
                   <p>集美大学</p>
-                  <p>459312人参加</p>
+                  <p>114514人参加</p>
                 </div>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/range05.jpg" alt="">
                 <div class="topic">
@@ -439,7 +456,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>6</span>
                 <img src="update/range06.jpg" alt="">
                 <div class="topic">
@@ -450,7 +467,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/range07.jpg" alt="">
                 <div class="topic">
@@ -461,7 +478,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/range08.jpg" alt="">
                 <div class="topic">
@@ -472,7 +489,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/range09.jpg" alt="">
                 <div class="topic">
@@ -483,7 +500,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/range10.jpg" alt="">
                 <div class="topic">
@@ -502,12 +519,12 @@
           <span>TOP50</span>
           <span>FIVE-STAR</span>
         </div>
-        <span class="next">&#xe68a;</span>
+        <span class="next">&#xe689;</span>
         <span class="last">&#xe685;</span>
         <div class="show">
           <ul>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>1</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -517,7 +534,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>2</span>
                 <img src="update/star02.jpg" alt="">
                 <div class="topic">
@@ -528,7 +545,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>3</span>
                 <img src="update/star03.jpg" alt="">
                 <div class="topic">
@@ -538,7 +555,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>4</span>
                 <img src="update/star04.jpg" alt="">
                 <div class="topic">
@@ -549,7 +566,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star05.jpg" alt="">
                 <div class="topic">
@@ -560,7 +577,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -571,7 +588,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -582,7 +599,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -593,7 +610,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -604,7 +621,7 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="javascript:;">
                 <span>5</span>
                 <img src="update/star01.jpg" alt="">
                 <div class="topic">
@@ -621,6 +638,36 @@
     </div>
   </div>
   <!-- 课程排行部分制作完成 -->
+  <!-- 侧边栏开始制作 -->
+  <div class="sidebar">
+    <a href="javascript:;"><img src="images/side.jpg" alt=""></a>
+    <div class="plan">同道计划</div>
+    <div class="side-bot">
+      <div class="feedback">
+        <a href="">
+          <p class="sidefont">&#xe85b;</p>
+          <p class="sideword">反馈</p>
+        </a>
+      </div>
+      <div class="download">
+        <a href="">
+          <p class="sidefont">&#xe626;</p>
+          <p class="sideword">下载</p>
+        </a>
+        <!-- <div class="QR">
+          <img src="images/downloadQR.png" alt="">
+          <img src="images/weixinQR.png" alt="">
+        </div> -->
+      </div>
+      <div class="backtop">
+        <a href="#nav">
+          <p class="sidefont">&#xe70d;</p>
+          <p class="sideword">顶部</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- 侧边栏结束制作 -->
 </body>
 
 </html>
