@@ -1,552 +1,821 @@
 .w {
-    margin: 0 auto;
-    width: 1200px;
+  margin: 0 auto;
+  width: 1200px;
 }
+
 body {
-    background-color: #f7f7f7;
-    height: 2000px;
+  background-color: #f7f7f7;
+  height: 2000px;
 }
+
 @font-face {
-    font-family: "iconfont"; /* Project id  */
-    src: url('../font/iconfont.ttf?t=1646041152953') format('truetype');
-        }
-        .iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
+  font-family: "iconfont";
+  /* Project id  */
+  src: url('../font/iconfont.ttf?t=1646041152953') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* 首页整体 */
 .ww {
-    margin-left: 245px ;
-    margin-right: 260px;
-    width: 1200px;
+  margin-left: 245px;
+  margin-right: 260px;
+  width: 1200px;
 }
+
 .navTop {
-    text-align: center;
-    font-size: 16px;
-    position: relative;
-    height: 64px;
-    background-color: white;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  height: 64px;
+  background-color: white;
 }
+
 /* logo设计 */
 .logo {
-    float: left;
-    margin-top: 16px;
+  float: left;
+  margin-top: 16px;
 }
+
 .logo img {
-    width: 217px;
-    height: 32px;
+  width: 217px;
+  height: 32px;
 }
+
 /* nav设计 */
 .nav {
-    float: left;
-    margin-top: 20px;
-    margin-left: 35px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 35px;
 }
+
 .nav li {
-    float: left;
-    font-size: 16px;
-    margin-left: 36px;
+  float: left;
+  font-size: 16px;
+  margin-left: 36px;
 }
+
 .nav-school::after {
-    content: "\e60d";
-    font-family: "iconfont";
-    display: inline-block;
-    color: #c6c6c6;
-    font-size: 12px;
-    margin-left: 2px;
-    transition: all .3s;
+  content: "\e60d";
+  font-family: "iconfont";
+  display: inline-block;
+  color: #c6c6c6;
+  font-size: 12px;
+  margin-left: 2px;
+  transition: all .3s;
 }
+
 .nav-school:hover:after {
-    transition: all .3;
-    transform: rotate(180deg);
+  transition: all .3;
+  transform: rotate(180deg);
 }
 
 .nav li a {
-    color: black;
+  color: black;
 }
+
 .nav li a:hover {
-    color: #41b265;
+  color: #41b265;
 }
+
 /* 开始下拉栏制作 */
 .dropdown {
-    box-shadow: 1px 0px 10px #888;
-    top: 61px;
-    left: 365px;;
-    z-index: 999;
-    position: absolute;
-    background-color: #fff;
-    width: 662px;
-    height: 441px;
-    display: none;
+  box-shadow: 1px 0px 10px #888;
+  top: 61px;
+  left: 365px;
+  ;
+  z-index: 9999;
+  position: absolute;
+  background-color: #fff;
+  width: 662px;
+  height: 441px;
+  display: none;
 }
+
 .dropdown::after {
-    position: absolute;
-    display: inline-block;
-    top: -10px;
-    left: 176px;
-    width: 0;
-    height: 0;
-    content: "";
-    border-style: solid;
-    border-width: 10px;
-    border-color: #fff #fff transparent transparent;
-    transform: rotate(315deg);
-    box-shadow: 2px -2px 2px #ccc;
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  left: 176px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(315deg);
+  box-shadow: 2px -2px 2px #ccc;
 }
 
 .dropdown .inner {
-    position: absolute;
-    margin-left: 28px;
-    margin-right: 50px;
-    margin-top: 30px;
-    margin-bottom: 26px;
+  position: absolute;
+  margin-left: 28px;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 26px;
 }
+
 .dropdown .university {
-    margin-top: 20px;
-    height: 130px;
+  margin-top: 20px;
+  height: 130px;
 }
+
 .dropdown .employ {
-    height: 140px;
+  height: 140px;
 }
+
 .dropdown .learn {
-    height: 120px;
+  height: 120px;
 }
+
 .dropdown h3 {
-    float: left;
-    font-size: 16px;
-    color: black;
+  float: left;
+  font-size: 16px;
+  color: black;
 }
+
 .dropdown ul {
-    float:left;
-    width: 600px;
+  float: left;
+  width: 600px;
 }
+
 .dropdown li {
-    margin-top: 10px;
-    float: left;
-    width: 110px;
-    height: 32px;
-    background-color: #f5f5f5;
-    border-radius: 20px;
-    text-align: center;
-    margin-right: 10px;
-    line-height: 30px;
+  margin-top: 10px;
+  float: left;
+  width: 110px;
+  height: 32px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  text-align: center;
+  margin-right: 10px;
+  line-height: 30px;
 }
+
 .dropdown li:hover {
-    background-color: #e6f9ee;
+  background-color: #e6f9ee;
 }
+
 .dropdown li:hover a {
-    color: #21c85b;
+  color: #21c85b;
 }
+
 .dropdown li a {
-    color: #363636;
-    font-size: 13.5px;
-    font-weight: 450;
+  color: #363636;
+  font-size: 13.5px;
+  font-weight: 450;
 }
+
 .dropdown .word {
-    font-size: 14px;
-    position: absolute;
-    left:0;
-    top: -10px;
-    color: #999;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  color: #999;
 }
+
 /* 结束下拉栏制作 */
 /* 搜索框制作 */
 .search {
-    position: absolute;
-    top: 15px;
-    left: 1060px;
-    user-select:none;
+  position: absolute;
+  top: 15px;
+  left: 1060px;
+  user-select: none;
 }
+
 .search .search_lf {
-    border-radius: 18px;
-    float: left;
-    border: 1.4px solid #86e6bf;
-    width: 260px;
-    height: 37px;
-    line-height: 35px;
-    position: absolute;
+  border-radius: 18px;
+  float: left;
+  border: 1.4px solid #86e6bf;
+  width: 260px;
+  height: 37px;
+  line-height: 35px;
+  position: absolute;
 }
+
 .search .search_lf input {
-    top: 4px;
-    left: 11px;
-    position: absolute;
-    height: 28px;
-    width: 200px;
-    margin-left: 10px;
-    font-size: 9px;
-    color: #000;
+  top: 4px;
+  left: 11px;
+  position: absolute;
+  height: 28px;
+  width: 200px;
+  margin-left: 10px;
+  font-size: 9px;
+  color: #000;
 }
-.search  button {
-    margin-top: 1.4px;
-    border-radius: 17px;
-    left: 203px;
-    position: absolute;
-    background-color: #27cd7f;
-    width: 56px;
-    height: 34px;
-    color: white;
-    font-family:"iconfont" ;
-    font-size: 23px;
+
+.search button {
+  margin-top: 1.4px;
+  border-radius: 17px;
+  left: 203px;
+  position: absolute;
+  background-color: #27cd7f;
+  width: 56px;
+  height: 34px;
+  color: white;
+  font-family: "iconfont";
+  font-size: 23px;
 }
+
 /* 右侧登录按钮 */
 .login {
-    float: left;
-    position: absolute;
-    right: 260px;
-    top: 23px;
-    font-size: 14px;
+  float: left;
+  position: absolute;
+  right: 260px;
+  top: 23px;
+  font-size: 14px;
 }
+
 .login a {
-    color: black;
+  color: black;
 }
+
 .login a:hover {
-    color: #41b265;
+  color: #41b265;
 }
+
 /* 首页制作结束 */
 /* 开始main部分制作 */
 /* 左侧栏制作 */
 .main {
-    margin-top: 10px;
-    height: 363px;
+  margin-top: 10px;
+  height: 363px;
 }
+
 .main .main-left {
-    width: 200px;
-    height: 360px;
-    background-color: white;
-    padding-top: 8px;
-    border-radius: 10px;
-    float: left;
+  width: 200px;
+  height: 360px;
+  background-color: white;
+  padding-top: 8px;
+  border-radius: 10px;
+  float: left;
 
 }
+
 .main .left-top {
-    width: 100%;
-    height: 315px;
-    overflow: hidden;
+  width: 100%;
+  height: 315px;
+  overflow: hidden;
 }
-.main .main-left  ul li {
-    padding-right: 23px;
-    margin-top: 5px;
-    height: 30px;
-    width: 100%;
-    line-height: 30px;
-    padding-left: 10px;
-    border-bottom-color: #333;
-    color: #999;
-    font-size: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: -10px;
+
+.main .main-left ul li {
+  padding-right: 23px;
+  margin-top: 5px;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  padding-left: 10px;
+  border-bottom-color: #333;
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: -10px;
 }
+
 .main .main-left ul li a {
-    display: inline-block;
-    font-size: 14px;
-    color: #333;
+  display: inline-block;
+  font-size: 14px;
+  color: #333;
 
 }
+
 .main .main-left ul li span {
-    padding-left: 10px;
-    font-size: 12px;
-    color: #999;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #999;
 }
+
 .main .main-left ul li span a {
-    font-size: 12px;
-    color: #999;
+  font-size: 12px;
+  color: #999;
 }
+
 .main .main-left ul li:hover {
-    background-color: #e6f9ee;
-    color:#27cd7f;
+  background-color: #e6f9ee;
+  color: #27cd7f;
 }
+
 .main .main-left ul li:hover a {
-    color:#27cd7f;
+  color: #27cd7f;
 }
+
 .main .main-left ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 .left-more {
-    margin-top: 4px;
-    color: black;
-    font-size: 14px;
-    width: 200px;
-    height: 34px;
-    padding-left:10px;
+  margin-top: 4px;
+  color: black;
+  font-size: 14px;
+  width: 200px;
+  height: 34px;
+  padding-left: 10px;
 }
+
 .left-more span {
-    font-family: "iconfont";
-    font-weight: 700;
-    color: #d2d2d2;
+  font-family: "iconfont";
+  font-weight: 700;
+  color: #d2d2d2;
 }
+
 /* 开始制作轮播图 */
 .main-lb {
-    float: left;
-    margin-left: 10px;
-    height: 360px;
-    width: 776px;
-    background-color: pink;
-    position: relative;
-    overflow: hidden;
-    border-radius: 6px;
+  float: left;
+  margin-left: 10px;
+  height: 360px;
+  width: 776px;
+  background-color: pink;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 }
-.main-lb .focus {
-    width: 5500px;
-    position: absolute;
-}
-.main-lb .focus li {
-    float: left;
-}
-.main-lb .focus li a img {
-    width: 776px;
-}
-.main-lb .next {
-    padding-left: 3px;
-    right: 18px;
 
+.main-lb .focus {
+  width: 5500px;
+  position: absolute;
 }
+
+.main-lb .focus li {
+  float: left;
+}
+
+.main-lb .focus li a img {
+  width: 776px;
+}
+
+.main-lb .next {
+  padding-left: 3px;
+  right: 18px;
+}
+
 .main-lb .last,
 .main-lb .next {
-    /* display: none; */
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    line-height: 48px;
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    background-color: rgba(0,0,0,.3);
-    z-index: 999;
-    border-radius: 24px;
-    top: 45%;
-    font-family: "iconfont";
-    user-select: none;
+  display: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 48px;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 999;
+  border-radius: 24px;
+  top: 45%;
+  font-family: "iconfont";
+  user-select: none;
 }
+
 .main-lb .last {
-    padding-right: 3px;
-    left: 18px;
+  padding-right: 3px;
+  left: 18px;
 }
+
 .main-lb .last:hover {
-    background-color: rgba(0,0,0,.6);
+  background-color: rgba(0, 0, 0, .6);
 }
+
 .main-lb .next:hover {
-    background-color: rgba(0,0,0,.6);
+  background-color: rgba(0, 0, 0, .6);
 }
+
 .main-lb .button {
-    position: absolute;
-    z-index: 999;
-    bottom: 20px;
-    left: 26px;
+  position: absolute;
+  z-index: 999;
+  bottom: 20px;
+  left: 26px;
 }
+
 .main-lb .button li {
-    float: left;
-    height: 14px;
-    width: 14px;
-    border-radius: 7px;
-    background-color: transparent;
-    text-align: center;
-    margin:0 2px;
-    user-select: none;
-    cursor: pointer;
+  float: left;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+  background-color: transparent;
+  text-align: center;
+  margin: 0 2px;
+  user-select: none;
+  cursor: pointer;
 }
+
 .main-lb .button li span {
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,.2);
-    /* background-color: rgba(255,255,255,.8); */
-    float: left;
-    margin: 2px 2px;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .2);
+  /* background-color: rgba(255,255,255,.8); */
+  float: left;
+  margin: 2px 2px;
 }
+
 .main-lb .button .current_out {
-    background-color: rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 0, .2);
 }
+
 .main-lb .button li .current_in {
-    background-color: rgba(255,255,255,.8);
+  background-color: rgba(255, 255, 255, .8);
 }
+
 /* 轮播图制作完成 */
 
 /* 开始制作右侧界面 */
 .main-right {
-    border-radius: 10px;
-    position: relative;
-    margin-left: 10px;
-    height: 360px;
-    width: 197px;
-    background-color: #fff;
-    float: left;
+  border-radius: 10px;
+  position: relative;
+  margin-left: 10px;
+  height: 360px;
+  width: 197px;
+  background-color: #fff;
+  float: left;
 }
+
 .main-right h3 {
-    margin-left: 18px;
-    margin-top: 25px;
-    width: 160px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 20px;
-    color: rgb(51, 51, 51);
-    font-weight: 400;
+  margin-left: 18px;
+  margin-top: 25px;
+  width: 160px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(51, 51, 51);
+  font-weight: 400;
 }
+
 .main-right img {
-    position: absolute;
-    top: 114px;
-    left: 65px;
-    width: 72px;
-    height: 72px;
+  position: absolute;
+  top: 114px;
+  left: 65px;
+  width: 72px;
+  height: 72px;
 }
+
 .main-right a {
-    text-align: center;
-    line-height: 32px;
-    font-size: 14px;
-    position: absolute;
-    color: white;
-    background-color: #00CC7E;
-    width: 168px;
-    height: 32px;
-    border-radius: 18px;
-    top: 206px;
-    left: 20px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 14px;
+  position: absolute;
+  color: white;
+  background-color: #00CC7E;
+  width: 168px;
+  height: 32px;
+  border-radius: 18px;
+  top: 206px;
+  left: 20px;
 }
+
 .main-right a:hover {
-    background-color: #21b36f;
+  background-color: #21b36f;
 }
+
 .main-right div {
-    position: absolute;
-    bottom: 20px;
-    left: 28px;
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
 }
+
 /* 右侧界面制作完成 */
 /* main部分制作完成 */
 /* school部分开始制作 */
 .school {
-    margin-top: 10px;
-    background-color: #fff;
-    height: 60px;
-    padding-left: 20px;
-    line-height: 60px;
-    border-radius: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  height: 60px;
+  padding-left: 20px;
+  line-height: 60px;
+  border-radius: 10px;
 }
+
 .school>a {
-    height: 100%;
-    float: left;
-    width: 178px;
-    font-size: 16px;
-    line-height: 60px;
+  height: 100%;
+  float: left;
+  width: 178px;
+  font-size: 16px;
+  line-height: 60px;
 }
+
 .school>a span {
-    font-size: 18px;
-    color: #ccc;
-    font-family: "iconfont";
-    float: right;
-    margin-right: 19px;
-    margin-top: 1px;
+  font-size: 18px;
+  color: #ccc;
+  font-family: "iconfont";
+  float: right;
+  margin-right: 19px;
+  margin-top: 1px;
 }
+
 .school ul li {
-    float: left;
-    margin-left: 55px;
+  float: left;
+  margin-left: 55px;
 }
+
 .school ul li img {
-    height: 38px;
-    margin-right: 10px;
+  height: 38px;
+  margin-right: 10px;
 }
+
 /* school部分结束制作 */
 /* recommend部分开始制作 */
 .recommend {
-    position: relative;
+  position: relative;
+  height: 370px;
 }
+
 .recommend h1 {
-    font-weight: 400;
-    color:black;
-    font-size: 24px;
-    margin-top: 15px;
+  font-weight: 400;
+  color: black;
+  font-size: 24px;
+  margin-top: 15px;
 }
+
 .recommend .next,
 .recommend .last {
-    font-family:"iconfont";
-    position :absolute;
-    font-size: 50px;
-    color: #cecece;
-    font-weight: 300;
-    cursor: pointer;
+  font-family: "iconfont";
+  position: absolute;
+  font-size: 50px;
+  color: #cecece;
+  font-weight: 300;
+  cursor: pointer;
 }
+
 .recommend .next {
-    right: 195px;
-    top: 172px;
+  right: 195px;
+  top: 172px;
 }
+
 .recommend .next:hover,
 .recommend .last:hover {
-    color: #9c9c9c;
+  color: #9c9c9c;
 }
+
 .recommend .last {
-    left: 195px;
-    top: 172px;
-    font-size: 50px;
-    color: #d2d2d2;
+  left: 195px;
+  top: 172px;
+  font-size: 50px;
+  color: #d2d2d2;
 }
+
 .recommend .show {
-    width: 1207px;
-    height: 468px;
-    position: absolute;
-    overflow: hidden;
+  width: 1207px;
+  height: 330px;
+  position: absolute;
+  overflow: hidden;
 }
+
 .recommend ul {
-    position: absolute;
-    width: 2500px;
+  position: absolute;
+  width: 2500px;
 }
+
 .recommend ul li {
-    margin-top: 20px;
-    float: left;
-    margin-right: 20.6px;
-    transition: all .3s;
-    border-radius: 10px;
+  margin-top: 20px;
+  float: left;
+  margin-right: 20.6px;
+  transition: all .3s;
+  border-radius: 10px;
 }
+
 .recommend ul li:hover {
-    box-shadow: 2px 2px 4px 5px rgb(228, 225, 225); 
+  box-shadow: 2px 2px 4px 5px rgb(228, 225, 225);
 }
+
 .recommend ul li a {
-    display: block;
-    height: 292px;
-    width: 223px;
-    background-color: #fff;
-    border-radius: 10px;
-    position: relative;
+  display: block;
+  height: 292px;
+  width: 223px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
 }
+
 .recommend ul li a img {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+
 .recommend ul li a h3 {
-    color: #333;
-    padding-left: 10px;
-    padding-top: 10px;
+  color: #333;
+  padding-left: 10px;
+  padding-top: 10px;
 }
+
 .recommend ul li a h5 {
-    color: #666;
-    font-weight: 400;
-    font-size: 12px;
-    padding-left: 10px;
+  color: #666;
+  font-weight: 400;
+  font-size: 12px;
+  padding-left: 10px;
 }
+
 .recommend ul li a h6 {
-    position: absolute;
-    bottom: 57px;
-    left: 10px;
-    font-weight: 400;
-    color: #666;
+  position: absolute;
+  bottom: 57px;
+  left: 10px;
+  font-weight: 400;
+  color: #666;
 }
+
 .recommend ul li a div {
-    padding-left: 8px;
-    padding-top: 8px;
-    position: absolute;
-    height: 50px;
-    width: 204px;
-    background-color: #f8f9fb;
-    bottom:6px;
-    left: 10px;
-    border-radius: 8px;
-    color: #666;
-    font-size: 12px;
+  padding-left: 8px;
+  padding-top: 8px;
+  position: absolute;
+  height: 50px;
+  width: 204px;
+  background-color: #f8f9fb;
+  bottom: 6px;
+  left: 10px;
+  border-radius: 8px;
+  color: #666;
+  font-size: 12px;
 }
 
 /* recommend部分结束制作 */
+/* 开始制作range部分 */
+.range {
+  height: 582px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.range>p {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  left: 246px;
+  top: -53px;
+}
+
+.range .hot {
+  position: relative;
+  float: left;
+  width: 387px;
+  height: 496px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-right: 19px;
+}
+
+.range .hot .next,
+.range .hot .last {
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 38px;
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 999;
+  top: 50%;
+  border-radius: 19px;
+  font-family: "iconfont";
+  user-select: none;
+  display: none;
+}
+
+.range .hot .next:hover,
+.range .hot .last:hover {
+  background-color: rgba(0, 0, 0, .6)
+}
+
+.hot:hover .next {
+  display: inline;
+}
+
+.range .hot .next {
+  right: 0;
+}
+
+.range .hot .last {
+  left: 0;
+}
+
+.range .hot:nth-child(3) {
+  margin-right: 0px;
+}
+
+.range .range-top {
+  width: 387px;
+  height: 68px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom, #fcf8ed, #fefbf5, #fff);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.range .range-top span {
+  float: left;
+  color: #cf8130;
+}
+
+.range .range-top span:nth-child(1) {
+  font-size: 18px;
+  margin-left: 38px;
+  font-weight: 700;
+}
+
+.range .range-top span:nth-child(2) {
+  width: 43.75px;
+  margin-left: -10px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #cf8130;
+}
+
+.range .range-top span:nth-child(3) {
+  font-size: 17px;
+  font-weight: 700;
+  font-style: italic;
+  color: #e2e2e2;
+}
+
+.range .show {
+  height: 425px;
+  width: 385px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.range ul {
+  height: 425px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 1000px;
+  justify-content: space-around;
+  align-content: flex-start;
+  min-width: 0;
+}
+
+.range ul li {
+  width: 392px;
+  height: 83px;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 2px;
+}
+
+.range ul li:nth-child(1) span {
+  color: #f45056;
+}
+
+.range ul li:nth-child(2) span {
+  color: #f97234;
+}
+
+.range ul li:nth-child(3) span {
+  color: #fab546;
+}
+
+.range ul li span {
+  float: left;
+  font-weight: 500;
+  font-size: 19px;
+  color: #b8b8b8;
+  margin: 0 8px;
+}
+
+.range ul li img {
+  width: 111px;
+  height: 62px;
+  float: left;
+  border-radius: 6px;
+}
+
+.range ul li .topic {
+  float: left;
+  margin-left: 12px;
+}
+
+.range ul li .topic p:nth-child(1) {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.range ul li .topic p:nth-child(2) {
+  color: #666;
+  margin-top: 1px;
+}
+
+.range ul li .topic p:nth-child(3) {
+  color: #999;
+  margin-top: 5px;
+}
+
+/* 结束制作range部分 */
