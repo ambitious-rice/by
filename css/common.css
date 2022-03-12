@@ -229,8 +229,43 @@ body {
   color: white;
   font-family: "iconfont";
   font-size: 23px;
+  z-index: 999999;
 }
-
+.search .result {
+  background-color: #fff;
+  border:1px #ccc solid;
+  width: 202px;
+  position: absolute;
+  left: 20px;
+  top: 36px;
+  z-index: 99999;
+  display: none;
+}
+.search .result div {
+  font-size: 12px;
+  text-align: left;
+  padding-left: 8px;
+}
+.search .result ul {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.search .result ul li {
+  color: #21c85b;
+  text-align: left;
+  padding-left: 8px;
+  height: 33px;
+  line-height: 33px;
+  transition: all .3;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search .result ul li:hover {
+  color: #fff;
+  background-color: #58b92f;
+}
 /* 右侧登录按钮 */
 .login {
   float: left;
@@ -469,7 +504,15 @@ body {
   width: 72px;
   height: 72px;
 }
-
+.main-right .user {
+  text-align: center;
+  width: 90%;
+  font-size: 14px;
+  position: absolute;
+  left: 5%;
+  bottom: 38%;
+  display: none;
+}
 .main-right a {
   text-align: center;
   line-height: 32px;
@@ -696,9 +739,11 @@ body {
   user-select: none;
   display: none;
 }
+
 .range .next:hover {
   background-color: rgba(0, 0, 0, .4);
 }
+
 .range .last:hover {
   background-color: rgba(0, 0, 0, .4);
 }
@@ -896,12 +941,15 @@ body {
 .side-bot>div:hover .sidefont {
   color: #fff;
 }
+
 .side-bot .download {
   position: relative;
 }
-.side-bot .download:hover .QR{
+
+.side-bot .download:hover .QR {
   display: block;
 }
+
 .side-bot .download .QR {
   position: absolute;
   right: 51px;
@@ -913,6 +961,7 @@ body {
   box-shadow: 0px 0px 1px .5px #ccc;
   display: none;
 }
+
 .side-bot .download .QR::after {
   position: absolute;
   display: inline-block;
@@ -925,16 +974,19 @@ body {
   border-width: 6px;
   border-color: #fff #fff transparent transparent;
   transform: rotate(45deg);
-  box-shadow: 1px -2px 1px  #ccc;
+  box-shadow: 1px -2px 1px #ccc;
 }
-.side-bot .download .QR  img {
+
+.side-bot .download .QR img {
   width: 86px;
 }
+
 .side-bot .download .QR div {
   float: left;
   margin: 0px 13px;
   margin-top: 23px;
 }
+
 .side-bot>div a {
   display: block;
   width: 25px;
@@ -998,9 +1050,11 @@ body {
   border-bottom: #27cd7f 3px solid;
   cursor: pointer;
 }
+
 .change-border {
-  border-bottom: 0!important;
+  border-bottom: 0 !important;
 }
+
 .log-nav span {
   font-family: "iconfont";
   position: absolute;
@@ -1016,7 +1070,6 @@ body {
   height: 302px;
   width: 361px;
   margin: 0 auto;
-  /* display: none; */
 }
 
 .log-border .regist {
@@ -1097,9 +1150,11 @@ body {
   border: 1px #aaa solid;
   font-family: 'iconfont';
 }
+
 .log-more span:nth-child(1) i em {
   display: none;
 }
+
 .log-more span:nth-child(1) span {
   margin-right: 1px;
 }
@@ -1113,5 +1168,19 @@ body {
   color: #4db051;
   cursor: pointer;
 }
-
+.regist .name {
+  position: relative;
+}
+.regist .paddword {
+  position: relative;
+}
+.regist i {
+  position: absolute;
+  font-family: "iconfont";
+  font-size: 16px;
+  color: red;
+  right: 8px;
+  top: 0;
+  display: none;
+}
 /* 结束制作登录栏 */
