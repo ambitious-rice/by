@@ -110,16 +110,32 @@ window.addEventListener('load', function () {
     var next = range.querySelectorAll('.next');
     var last = range.querySelectorAll('.last');
     for (var i = 0; i < next.length; i++) {
+        var show=next[i].parentNode;
+        show.setAttribute("light","1");
         next[i].addEventListener('click', function () {
             var father = this.parentNode;
-            console.log(father);
             father.querySelector('.last').style.display = "block"
             var ul = father.querySelector('ul');
             var width = ul.querySelector('li').offsetWidth;
             animate(ul, -width);
+            this.parentNode.setAttribute("light","0");
             this.style.display = "none";
         })
+        show.addEventListener('mouseenter',function() {
+            if(this.getAttribute("light")=="1"){
+                this.querySelector('.next').style.display="block";
+                this.querySelector('.last').style.display="none";
+            }else {
+                this.querySelector('.last').style.display="block";
+                this.querySelector('.next').style.display="none";
+            }
+        })
+        show.addEventListener('mouseleave',function() {
+            this.parentNode.querySelector('.next').style.display="none";
+            this.parentNode.querySelector('.last').style.display="none";
+        })
     }
+
     for (var i = 0; i < last.length; i++) {
         last[i].style.display = "none";
         last[i].addEventListener('click', function () {
@@ -127,6 +143,7 @@ window.addEventListener('load', function () {
             father.querySelector('.next').style.display = "block"
             var ul = father.querySelector('ul');
             animate(ul, 0);
+            this.parentNode.setAttribute("light","1");
             this.style.display = "none";
         })
     }
