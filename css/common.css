@@ -71,7 +71,7 @@ body {
   transition: all .3s;
 }
 
-.nav-school:hover:after {
+.xiala:hover .nav-school::after {
   transition: all .3;
   transform: rotate(180deg);
 }
@@ -87,22 +87,23 @@ body {
 /* 开始下拉栏制作 */
 .dropdown {
   box-shadow: 1px 0px 10px #888;
-  top: 61px;
-  left: 365px;
-  ;
+  top: 34px;
+  left: -114px;
   z-index: 9999;
   position: absolute;
   background-color: #fff;
-  width: 662px;
-  height: 441px;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
   display: none;
+  transition: all .3s;
 }
 
 .dropdown::after {
   position: absolute;
   display: inline-block;
   top: -10px;
-  left: 176px;
+  left: 120px;
   width: 0;
   height: 0;
   content: "";
@@ -127,7 +128,7 @@ body {
 }
 
 .dropdown .employ {
-  height: 140px;
+  height: 130px;
 }
 
 .dropdown .learn {
@@ -153,7 +154,7 @@ body {
   background-color: #f5f5f5;
   border-radius: 20px;
   text-align: center;
-  margin-right: 10px;
+  margin-left: 10px;
   line-height: 30px;
 }
 
@@ -177,6 +178,14 @@ body {
   left: 0;
   top: -10px;
   color: #999;
+}
+
+.xiala {
+  position: relative;
+}
+
+.xiala:hover .dropdown {
+  display: block;
 }
 
 /* 结束下拉栏制作 */
@@ -260,7 +269,11 @@ body {
 .main .left-top {
   width: 100%;
   height: 315px;
+  background-color: #fff;
   overflow: hidden;
+  position: relative;
+  z-index: 99999;
+  transition: all .3s;
 }
 
 .main .main-left ul li {

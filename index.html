@@ -14,6 +14,7 @@
   <script src="js/sidebar.js"></script>
   <script src="js/recommend.js"></script>
   <script src="js/range.js"></script>
+  <script src="js/xiala.js"></script>
 </head>
 
 <body>
@@ -22,54 +23,55 @@
     <div class="ww">
       <a href="https://www.icourse163.org/" class="logo"> <img src="images/logo.png" alt=""></a>
       <ul class="nav">
-        <li><a class="nav-school" href="#" id="dropup">课程 </a></li>
-        <li><a href="#">学校</a></li>
+        <li class="xiala">
+          <a href="#" id="dropup" class="nav-school">课程 </a>
+          <div class="dropdown">
+            <div class="inner">
+              <div class="word">中国大学MOOC,为你提供一流大学教育</div>
+              <div class="university">
+                <h3>大学</h3>
+                <ul>
+                  <li><a href="javascript:;">国家精品</a></li>
+                  <li><a href="javascript:;">理学工学农学</a></li>
+                  <li><a href="javascript:;">外语</a></li>
+                  <li><a href="javascript:;">经济管理</a></li>
+                  <li><a href="javascript:;">计算机</a></li>
+                  <li><a href="javascript:;">音乐与艺术</a></li>
+                  <li><a href="javascript:;">心理学</a></li>
+                  <li><a href="javascript:;">文史哲法</a></li>
+                  <li><a href="javascript:;">医学与保健</a></li>
+                  <li><a href="javascript:;">教育教学</a></li>
+                </ul>
+              </div>
+              <div class="employ">
+                <h3>升学/择业</h3>
+                <ul>
+                  <li><a href="javascript:;">大学应试英语</a></li>
+                  <li><a href="javascript:;">期末不挂</a></li>
+                  <li><a href="javascript:;">考研</a></li>
+                  <li><a href="javascript:;">考研活动</a></li>
+                  <li><a href="javascript:;">好课速递</a></li>
+                  <li><a href="javascript:;">考编·考证</a></li>
+                  <li><a href="javascript:;">求职就业</a></li>
+                  <li><a href="javascript:;">四六级开学</a></li>
+                  <li><a href="javascript:;">专升本</a></li>
+                  <li><a href="javascript:;">精选微课</a></li>
+                </ul>
+              </div>
+              <div class="learn">
+                <h3>终身学习</h3>
+                <ul>
+                  <li><a href="javascript:;">有声课堂</a></li>
+                  <li><a href="javascript:;">兴趣技能</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><a href="#">学校云</a></li>
         <li><a href="#">慕课堂</a></li>
         <li><a href="#">下载APP</a></li>
       </ul>
-      <div class="dropdown">
-        <div class="inner">
-          <div class="word">中国大学MOOC,为你提供一流大学教育</div>
-          <div class="university">
-            <h3>大学</h3>
-            <ul>
-              <li><a href="javascript:;">国家精品</a></li>
-              <li><a href="javascript:;">理学工学农学</a></li>
-              <li><a href="javascript:;">外语</a></li>
-              <li><a href="javascript:;">经济管理</a></li>
-              <li><a href="javascript:;">计算机</a></li>
-              <li><a href="javascript:;">音乐与艺术</a></li>
-              <li><a href="javascript:;">心理学</a></li>
-              <li><a href="javascript:;">文史哲法</a></li>
-              <li><a href="javascript:;">医学与保健</a></li>
-              <li><a href="javascript:;">教育教学</a></li>
-            </ul>
-          </div>
-          <div class="employ">
-            <h3>升学/择业</h3>
-            <ul>
-              <li><a href="javascript:;">大学应试英语</a></li>
-              <li><a href="javascript:;">期末不挂</a></li>
-              <li><a href="javascript:;">考研</a></li>
-              <li><a href="javascript:;">考研活动</a></li>
-              <li><a href="javascript:;">好课速递</a></li>
-              <li><a href="javascript:;">考编·考证</a></li>
-              <li><a href="javascript:;">求职就业</a></li>
-              <li><a href="javascript:;">四六级开学</a></li>
-              <li><a href="javascript:;">专升本</a></li>
-              <li><a href="javascript:;">精选微课</a></li>
-            </ul>
-          </div>
-          <div class="learn">
-            <h3>终身学习</h3>
-            <ul>
-              <li><a href="javascript:;">有声课堂</a></li>
-              <li><a href="javascript:;">兴趣技能</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div class="search">
         <div class="search_lf">
           <input type="text" placeholder="搜索感兴趣的课程">
@@ -119,7 +121,7 @@
         <li><a href="javascript:;">有声课堂</a><span><a href="javascript:;">热门专栏</a>/<a href="javascript:;">情商</a>/</span>
         </li>
       </ul>
-      <div class="left-more">更多 <span>&#xe688;</span></div>
+      <div class="left-more">更多<span>&#xe665;</span></div>
     </div>
     <!-- 左侧界面制作结束 -->
     <!-- 轮播图制作开始 -->
@@ -458,7 +460,7 @@
             <li>
               <a href="javascript:;">
                 <span>6</span>
-                <img src="update/range06.jpg" alt="">
+                <img src="update/range05.jpg" alt="">
                 <div class="topic">
                   <p>Python语言程序设计</p>
                   <p>北京理工大学</p>
@@ -469,7 +471,7 @@
             <li>
               <a href="javascript:;">
                 <span>5</span>
-                <img src="update/range07.jpg" alt="">
+                <img src="update/range05.jpg" alt="">
                 <div class="topic">
                   <p>Python语言程序设计</p>
                   <p>北京理工大学</p>
@@ -480,7 +482,7 @@
             <li>
               <a href="javascript:;">
                 <span>5</span>
-                <img src="update/range08.jpg" alt="">
+                <img src="update/range05.jpg" alt="">
                 <div class="topic">
                   <p>Python语言程序设计</p>
                   <p>北京理工大学</p>
@@ -491,7 +493,7 @@
             <li>
               <a href="javascript:;">
                 <span>5</span>
-                <img src="update/range09.jpg" alt="">
+                <img src="update/range05.jpg" alt="">
                 <div class="topic">
                   <p>Python语言程序设计</p>
                   <p>北京理工大学</p>
@@ -502,7 +504,7 @@
             <li>
               <a href="javascript:;">
                 <span>5</span>
-                <img src="update/range10.jpg" alt="">
+                <img src="update/range05.jpg" alt="">
                 <div class="topic">
                   <p>Python语言程序设计</p>
                   <p>北京理工大学</p>
@@ -660,7 +662,7 @@
         </div> -->
       </div>
       <div class="backtop">
-        <a href="#nav">
+        <a href="javascript:;">
           <p class="sidefont">&#xe70d;</p>
           <p class="sideword">顶部</p>
         </a>
