@@ -183,7 +183,7 @@ window.addEventListener('load', function () {
   backtop.addEventListener('click', function () {
     var timer = setInterval(function () {
       var left = window.pageYOffset;
-      var step = Math.ceil(left / 10);
+      var step = Math.ceil(left / 20);
       window.scroll(0, left - step);
       if (left == 0) {
         clearInterval(timer);
@@ -300,40 +300,80 @@ window.addEventListener('load', function () {
   //开始写登录功能
   var denglu = document.querySelector('.log button');
   denglu.addEventListener('click', function () {
-    var logname = document.querySelector(".log .name input").value;
-    var logpass = document.querySelector('.log .paddword input').value;
-    console.log(logname, logpass);
-    if (localStorage.length == 0) {
-      console.log("您还未注册 请先注册");
-      regbut.click();
-    } else {
-      let namelist = [];
-      let passlist = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        console.log(key);
-        let keydate = localStorage.getItem(key);
-        let keyinfo = JSON.parse(keydate);
-        console.log('keyinfo');
-        namelist[i] = keyinfo.name;
-        passlist[i] = keyinfo.password;
-      }
-      if (namelist.indexOf(logname) < 0) {
-        alert('您还未注册 请先注册');
-        regbut.click();
-      } else if (passlist[namelist.indexOf(logname)] != logpass) {
-        alert('密码错误')
-      } else {
-        alert('欢迎登录' + logname);
-        close.click();
-        document.querySelector(".log .name input").value = "";
-        var logpass = document.querySelector('.log .paddword input').value = ""
-        button.style.display = "none";
-        var user = document.querySelector('.main-right .user');
-        user.style.display = "block"
-        user.innerHTML = "你好" + "," + logname;
+    var logname = Number(document.querySelector(".log .name input").value);
+    var logpass = Number(document.querySelector('.log .paddword input').value);
+    //自己写的登录代码
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', "http://124.223.161.139:8000/server?name=100&pass=200");
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      console.log('change');
+      if (xhr.readyState == 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          // console.log(xhr.response);
+          var loglist = JSON.parse(xhr.response);
+          // console.log(loglist);
+          let namelist = [];
+          let passlist = [];
+          var logkey=Object.keys(loglist);
+          for (let i = 0; i < logkey.length; i++) {
+            let key = logkey[i];
+            // console.log('key',key);
+            let keydate = loglist[key];
+            // console.log(keydate,);
+            let keyinfo = JSON.parse(keydate);
+            // console.log(keyinfo);
+            namelist[i] = keyinfo.name;
+            passlist[i] = keyinfo.pass;
+          }
+          if (namelist.indexOf(logname) < 0) {
+            alert('您还未注册 请先注册');
+            // regbut.click();
+          } else if (passlist[namelist.indexOf(logname)] != logpass) {
+            alert('密码错误')
+          } else {
+            alert('欢迎登录' + logname);
+          }
+        }
       }
     }
+
+
+
+
+    //自己写的登录代码
+    // console.log(logname, logpass);
+    // if (localStorage.length == 0) {
+    //   console.log("您还未注册 请先注册");
+    //   regbut.click();
+    // } else {
+    //   let namelist = [];
+    //   let passlist = [];
+    //   for (let i = 0; i < localStorage.length; i++) {
+    //     let key = localStorage.key(i)
+    //     console.log(key);
+    //     let keydate = localStorage.getItem(key);
+    //     let keyinfo = JSON.parse(keydate);
+    //     console.log('keyinfo');
+    //     namelist[i] = keyinfo.name;
+    //     passlist[i] = keyinfo.password;
+    //   }
+    //   if (namelist.indexOf(logname) < 0) {
+    //     alert('您还未注册 请先注册');
+    //     regbut.click();
+    //   } else if (passlist[namelist.indexOf(logname)] != logpass) {
+    //     alert('密码错误')
+    //   } else {
+    //     alert('欢迎登录' + logname);
+    //     close.click();
+    //     document.querySelector(".log .name input").value = "";
+    //     var logpass = document.querySelector('.log .paddword input').value = ""
+    //     button.style.display = "none";
+    //     var user = document.querySelector('.main-right .user');
+    //     user.style.display = "block"
+    //     user.innerHTML = "你好" + "," + logname;
+    //   }
+    // }
   })
 })
 
