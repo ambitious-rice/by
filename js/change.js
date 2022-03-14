@@ -246,52 +246,32 @@ window.addEventListener('load', function () {
   addnew.addEventListener('click', function () {
     let addname = document.querySelector('.regist .name input').value;
     let addpass = document.querySelector('.regist .paddword input').value;
-    if (addname.length == 0) {
+    if (addname.length == 0 | addname.length > 20) {
       passError.style.display = "none"
       nameError.style.display = "block"
-    } else if (addpass.length == 0) {
+    } else if (addpass.length == 0 | addpass.length > 20) {
       nameError.style.display = "none";
       passError.style.display = "block";
     } else {
       nameError.style.display = "none"
       passError.style.display = "none"
-      if (localStorage.length == 0) {
-        let dataLength = localStorage.length;
-        let data = {};
-        data.name = addname;
-        data.password = addpass;
-        data.id = dataLength;
-        let info = JSON.stringify(data);
-        localStorage.setItem("key" + dataLength, info);
-        document.querySelector('.regist .name input').value = "";
-        addpass = document.querySelector('.regist .paddword input').value = ""
-        alert('注册成功');
-        logbut.click();
-      } else {
-        var flag = true;
-        for (var i = 0; i < localStorage.length; i++) {
-          let key = localStorage.key(i);
-          let keydata = localStorage.getItem(key);
-          let keyinfo = JSON.parse(keydata);
-          if (keyinfo.name == addname) {
-            alert("账号名重复");
-            flag = false;
-            break;
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', "http://124.223.161.139:8000/regist?name=" + addname + "&pass=" + addpass);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            var result = xhr.response;
+            if (result == '-1') {
+              alert('您的名字重复,请重新取一个吧');
+              document.querySelector('.regist .name input').value = "";
+            } else {
+              alert('注册成功' + addname);
+              document.querySelector('.regist .name input').value = "";
+              document.querySelector('.regist .paddword input').value = "";
+              logbut.click();
+            }
           }
-        }
-        if (flag) {
-          let dataLength = localStorage.length;
-          let data = {};
-          data.name = addname;
-          data.password = addpass;
-          data.id = dataLength;
-          let info = JSON.stringify(data);
-          console.log(info);
-          localStorage.setItem("key" + dataLength, info);
-          document.querySelector('.regist .name input').value = "";
-          addpass = document.querySelector('.regist .paddword input').value = "";
-          alert('注册成功');
-          logbut.click();
         }
       }
     }
@@ -304,76 +284,31 @@ window.addEventListener('load', function () {
     var logpass = Number(document.querySelector('.log .paddword input').value);
     //自己写的登录代码
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', "http://124.223.161.139:8000/server?name=100&pass=200");
+    xhr.open('GET', "http://124.223.161.139:8000/login?name=" + logname + "&pass=" + logpass);
     xhr.send();
     xhr.onreadystatechange = function () {
       console.log('change');
       if (xhr.readyState == 4) {
         if (xhr.status >= 200 && xhr.status < 300) {
-          // console.log(xhr.response);
-          var loglist = JSON.parse(xhr.response);
-          // console.log(loglist);
-          let namelist = [];
-          let passlist = [];
-          var logkey=Object.keys(loglist);
-          for (let i = 0; i < logkey.length; i++) {
-            let key = logkey[i];
-            // console.log('key',key);
-            let keydate = loglist[key];
-            // console.log(keydate,);
-            let keyinfo = JSON.parse(keydate);
-            // console.log(keyinfo);
-            namelist[i] = keyinfo.name;
-            passlist[i] = keyinfo.pass;
-          }
-          if (namelist.indexOf(logname) < 0) {
+          var result = xhr.response;
+          if (result == '-1') {
             alert('您还未注册 请先注册');
-            // regbut.click();
-          } else if (passlist[namelist.indexOf(logname)] != logpass) {
+            regbut.click();
+          } else if (result == '1') {
             alert('密码错误')
           } else {
             alert('欢迎登录' + logname);
+            document.querySelector(".log .name input").value = "";
+            var logpass = document.querySelector('.log .paddword input').value = ""
+            button.style.display = "none";
+            var user = document.querySelector('.main-right .user');
+            user.style.display = "block"
+            user.innerHTML = "你好" + "," + logname;
+            close.click();
           }
         }
       }
     }
-
-
-
-
-    //自己写的登录代码
-    // console.log(logname, logpass);
-    // if (localStorage.length == 0) {
-    //   console.log("您还未注册 请先注册");
-    //   regbut.click();
-    // } else {
-    //   let namelist = [];
-    //   let passlist = [];
-    //   for (let i = 0; i < localStorage.length; i++) {
-    //     let key = localStorage.key(i)
-    //     console.log(key);
-    //     let keydate = localStorage.getItem(key);
-    //     let keyinfo = JSON.parse(keydate);
-    //     console.log('keyinfo');
-    //     namelist[i] = keyinfo.name;
-    //     passlist[i] = keyinfo.password;
-    //   }
-    //   if (namelist.indexOf(logname) < 0) {
-    //     alert('您还未注册 请先注册');
-    //     regbut.click();
-    //   } else if (passlist[namelist.indexOf(logname)] != logpass) {
-    //     alert('密码错误')
-    //   } else {
-    //     alert('欢迎登录' + logname);
-    //     close.click();
-    //     document.querySelector(".log .name input").value = "";
-    //     var logpass = document.querySelector('.log .paddword input').value = ""
-    //     button.style.display = "none";
-    //     var user = document.querySelector('.main-right .user');
-    //     user.style.display = "block"
-    //     user.innerHTML = "你好" + "," + logname;
-    //   }
-    // }
   })
 })
 
