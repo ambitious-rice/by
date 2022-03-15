@@ -76,6 +76,41 @@ app.get('/regist', (request, response) => {
         }
     })
 });
+app.get('/search', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    const url = request.url;
+    const method = request.method;
+    const query = querystring.parse(url.split('?')[1]);
+    console.log(url, query.search);
+    var sql = "select * from search where data like" + "'%" + query.search + "%'";
+    console.log(sql);
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        if (results.length != 0) {
+            var back = [];
+            for (var i = 0; i < results.length; i++) {
+                back[i] = results[i].data;
+            }
+            console.log(back);
+            response.send(JSON.stringify(back));
+        }else {
+            response.send(JSON.stringify([]));
+        }
+    })
+});
+app.get('/recommend', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    var sql = "select * from recommend";
+    console.log(sql);
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        response.send(JSON.stringify(results));
+    })
+});
 
 app.listen(8000, () => {
     console.log('服务已经启动,8000端口监听中');

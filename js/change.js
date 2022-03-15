@@ -148,25 +148,6 @@ window.addEventListener('load', function () {
 
 })
 
-//推荐切换
-window.addEventListener('load', function () {
-  var ul = document.querySelector(".recommend .show ul");
-  var next = document.querySelector('.recommend .next');
-  var last = document.querySelector('.recommend .last');
-  var li = ul.querySelector('li');
-  var width = li.offsetWidth + 19;
-  last.style.display = "none";
-  next.addEventListener('click', function () {
-    last.style.display = "block";
-    animate(ul, -width * 5);
-    next.style.display = "none";
-  })
-  last.addEventListener('click', function () {
-    next.style.display = "block";
-    animate(ul, 0);
-    last.style.display = "none";
-  })
-})
 
 //侧边栏
 window.addEventListener('load', function () {
@@ -280,8 +261,8 @@ window.addEventListener('load', function () {
   //开始写登录功能
   var denglu = document.querySelector('.log button');
   denglu.addEventListener('click', function () {
-    var logname = Number(document.querySelector(".log .name input").value);
-    var logpass = Number(document.querySelector('.log .paddword input').value);
+    var logname = (document.querySelector(".log .name input").value);
+    var logpass = (document.querySelector('.log .paddword input').value);
     //自己写的登录代码
     const xhr = new XMLHttpRequest();
     xhr.open('GET', "http://124.223.161.139:8000/login?name=" + logname + "&pass=" + logpass);
@@ -317,37 +298,38 @@ window.addEventListener('load', function () {
   var search = document.querySelector('.search_lf input');
   var result = document.querySelector("#result");
   var ul = document.querySelector('.result ul');
-  var data = ["浙江大学计算机", "华中科技大学计算机", "同济大学土木工程", "武汉大学计算机", "清华大学线性代数", "宋浩线性代数", "山本的日语课堂", "张凯的网球课"]
-  localStorage.setItem('searchdata', JSON.stringify(data));
-  let searchdata = JSON.parse(localStorage.getItem('searchdata'))
-  let message = result.querySelector('div');
   search.addEventListener('focus', function () {
-    console.log('he');
     result.style.display = "block";
     search.placeholder = "";
   })
   search.addEventListener('keyup', function () {
-    console.log('up');
-    ul.innerHTML = "";
-    var string = this.value;
-    var temp = [];
-    for (var i = 0; i < searchdata.length; i++) {
-      if (string == "") {
-        break;
+    var string = search.value;
+    if (search.value != "") {
+      ul.innerHTML = "";
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', "http://124.223.161.139:8000/search?search=" + string);
+      console.log("http://124.223.161.139:8000/search?search=" + string);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        ul.innerHTML = "";
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            var temp = JSON.parse(xhr.response);
+            if (temp.length != 0) {
+              var li = document.createElement('li');
+              li.innerHTML = "搜索" + '"' + string + '"' + "所有相关课程";
+              ul.appendChild(li);
+              for (var j = 0; j < temp.length && j < 8; j++) {
+                var p = document.createElement('li');
+                ul.appendChild(p);
+                p.innerHTML = temp[j];
+              }
+            }
+          }
+        }
       }
-      if (searchdata[i].indexOf(string) >= 0) {
-        temp.push(searchdata[i]);
-      }
-    }
-    if (temp.length != 0) {
-      var li = document.createElement('li');
-      li.innerHTML = "搜索" + '"' + string + '"' + "所有相关课程";
-      ul.appendChild(li);
-      for (var j = 0; j < temp.length && j < 8; j++) {
-        var p = document.createElement('li');
-        ul.appendChild(p);
-        p.innerHTML = temp[j];
-      }
+    } else {
+      ul.innerHTML = "";
     }
   })
   search.addEventListener('blur', function () {
@@ -355,5 +337,61 @@ window.addEventListener('load', function () {
     if (search.value == "") {
       search.placeholder = "搜索感兴趣的课程";
     }
+  })
+})
+// 每日热榜转换成利用插入节点方式生成
+window.addEventListener('load', function () {
+  console.log('hello');
+  var ul = document.querySelector('.recommend .show ul');
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', "http://124.223.161.139:8000/recommend?name=1");
+  xhr.send();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        var response=JSON.parse(xhr.response);
+        for(var i=0;i<response.length;i++) {
+          var n=response[i].runoob_title.split(" ");
+          var li=document.createElement('li');
+          ul.appendChild(li);
+          var a=document.createElement('a');
+          a.href="javascript:;";
+          li.appendChild(a);
+          var img=document.createElement('img');
+          img.src=n[0];
+          a.appendChild(img);
+          var h3=document.createElement('h3');
+          h3.innerHTML=n[1];
+          a.appendChild(h3);
+          var h5=document.createElement('h5');
+          h5.innerHTML=n[2];
+          a.appendChild(h5);
+          var h6=document.createElement('h6');
+          h6.innerHTML=n[3];
+          var div=document.createElement('div');
+          div.innerHTML=n[4];
+          a.appendChild(div);
+        }
+      }
+    }
+  }
+})
+//推荐切换
+window.addEventListener('load', function () {
+  var ul = document.querySelector(".recommend .show ul");
+  var next = document.querySelector('.recommend .next');
+  var last = document.querySelector('.recommend .last');
+  var li = ul.querySelector('li');
+  var width = 223 + 19;
+  last.style.display = "none";
+  next.addEventListener('click', function () {
+    last.style.display = "block";
+    animate(ul, -width * 5);
+    next.style.display = "none";
+  })
+  last.addEventListener('click', function () {
+    next.style.display = "block";
+    animate(ul, 0);
+    last.style.display = "none";
   })
 })

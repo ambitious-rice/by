@@ -30,11 +30,13 @@ body {
 }
 
 .navTop {
+  position: sticky;
+  top:0px;
   text-align: center;
   font-size: 16px;
-  position: relative;
   height: 64px;
   background-color: white;
+  z-index: 99999999;
 }
 
 /* logo设计 */
@@ -309,6 +311,7 @@ body {
   position: relative;
   z-index: 99999;
   transition: all .3s;
+  border-radius: 8px;
 }
 
 .main .main-left ul li {
