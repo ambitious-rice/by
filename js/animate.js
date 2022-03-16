@@ -7,7 +7,7 @@ function animate(obj, target, callback) {
                 callback()
             }
         }
-        var sped = (target - obj.offsetLeft) / 80;
+        var sped = (target - obj.offsetLeft) / 60;
         sped = sped > 0 ? Math.ceil(sped) : Math.floor(sped);
         obj.style.left = obj.offsetLeft + sped + 'px';
     }, 3);

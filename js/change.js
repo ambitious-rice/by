@@ -1,3 +1,5 @@
+var themerange = 0;
+var logstatus = "";
 //轮播图
 window.addEventListener('load', function () {
   var lb = document.querySelector(".main-lb");
@@ -184,12 +186,25 @@ window.addEventListener('load', function () {
   var log = login.querySelector('.log');
   var regist = login.querySelector('.regist');
   var i = document.querySelector(".log-more i");
-
+  var nav = this.document.querySelector('.navTop .login a');
+  var navbc = nav.innerHTML;
   // 完成基础的点击功能
   i.setAttribute('click', "0");
   button.addEventListener('click', function () {
     login.style.display = "block";
     bg.style.display = "block";
+  })
+  nav.addEventListener('click', function () {
+    if (logstatus == "") {
+      login.style.display = "block";
+      bg.style.display = "block";
+    } else {
+      button.style.display = "block";
+      var user = document.querySelector('.main-right .user');
+      user.style.display = "none";
+      user.innerHTML = "";
+      this.innerHTML = navbc;
+    }
   })
   close.addEventListener('click', function () {
     login.style.display = "none";
@@ -237,7 +252,7 @@ window.addEventListener('load', function () {
       nameError.style.display = "none"
       passError.style.display = "none"
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', "http://124.223.161.139:8000/regist?name=" + addname + "&pass=" + addpass);
+      xhr.open('GET', "http://124.223.161.139:8000/regist?name=" + addname + "&pass=" + addpass + "&theme" + themerange % 2);
       xhr.send();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -275,16 +290,21 @@ window.addEventListener('load', function () {
           if (result == '-1') {
             alert('您还未注册 请先注册');
             regbut.click();
-          } else if (result == '1') {
+          } else if (result == '-2') {
             alert('密码错误')
           } else {
+            console.log(result);
+            themerange = JSON.parse(result);
+            changetheme(themerange);
             alert('欢迎登录' + logname);
+            logstatus = logname;
             document.querySelector(".log .name input").value = "";
             var logpass = document.querySelector('.log .paddword input').value = ""
             button.style.display = "none";
             var user = document.querySelector('.main-right .user');
-            user.style.display = "block"
+            user.style.display = "block";
             user.innerHTML = "你好" + "," + logname;
+            nav.innerHTML = "退出登录"
             close.click();
           }
         }
@@ -349,27 +369,27 @@ window.addEventListener('load', function () {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status >= 200 && xhr.status < 300) {
-        var response=JSON.parse(xhr.response);
-        for(var i=0;i<response.length;i++) {
-          var n=response[i].runoob_title.split(" ");
-          var li=document.createElement('li');
+        var response = JSON.parse(xhr.response);
+        for (var i = 0; i < response.length; i++) {
+          var n = response[i].runoob_title.split(" ");
+          var li = document.createElement('li');
           ul.appendChild(li);
-          var a=document.createElement('a');
-          a.href="javascript:;";
+          var a = document.createElement('a');
+          a.href = "javascript:;";
           li.appendChild(a);
-          var img=document.createElement('img');
-          img.src=n[0];
+          var img = document.createElement('img');
+          img.src = n[0];
           a.appendChild(img);
-          var h3=document.createElement('h3');
-          h3.innerHTML=n[1];
+          var h3 = document.createElement('h3');
+          h3.innerHTML = n[1];
           a.appendChild(h3);
-          var h5=document.createElement('h5');
-          h5.innerHTML=n[2];
+          var h5 = document.createElement('h5');
+          h5.innerHTML = n[2];
           a.appendChild(h5);
-          var h6=document.createElement('h6');
-          h6.innerHTML=n[3];
-          var div=document.createElement('div');
-          div.innerHTML=n[4];
+          var h6 = document.createElement('h6');
+          h6.innerHTML = n[3];
+          var div = document.createElement('div');
+          div.innerHTML = n[4];
           a.appendChild(div);
         }
       }
@@ -382,9 +402,9 @@ window.addEventListener('load', function () {
   var next = document.querySelector('.recommend .next');
   var last = document.querySelector('.recommend .last');
   var li = ul.querySelector('li');
-  var width = 223 + 19;
   last.style.display = "none";
   next.addEventListener('click', function () {
+    var width = 223 + 19;
     last.style.display = "block";
     animate(ul, -width * 5);
     next.style.display = "none";
@@ -394,4 +414,132 @@ window.addEventListener('load', function () {
     animate(ul, 0);
     last.style.display = "none";
   })
+})
+// 切换主题功能
+window.addEventListener('load', function () {
+  var theme = document.querySelector('.theme');
+  theme.addEventListener('click', function () {
+    themerange++;
+    changetheme(themerange % 2);
+    if (logstatus != "") {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', "http://124.223.161.139:8000/theme?theme=" + themerange % 2 + "&" + "name=" + logstatus);
+      xhr.send();
+    }
+  })
+})
+
+function changetheme(i) {
+  var body = document.querySelector('body');
+  var list = ["theme-default", "theme-yellow"]
+  body.className = list[i]
+}
+//通过后台传数据生成本周课程排行
+window.addEventListener('load', function () {
+  var ul = document.querySelector('.range .range01 ul');
+  console.log(ul);
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', "http://124.223.161.139:8000/range01");
+  xhr.send();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        var response = JSON.parse(xhr.response);
+        for (var i = 0; i < response.length; i++) {
+          var n = response[i].runoob_title.split("$");
+          var li = document.createElement('li');
+          ul.appendChild(li);
+          var a = document.createElement('a');
+          a.href = "javascript:;";
+          li.appendChild(a);
+          var span = document.createElement('span');
+          var img = document.createElement('img');
+          span.innerHTML = i + 1;
+          img.src = n[0];
+          a.appendChild(span);
+          a.appendChild(img);
+          var div = document.createElement('div');
+          div.className = 'topic';
+          a.appendChild(div);
+          for (var k = 0; k < 3; k++) {
+            var p = document.createElement('p');
+            p.innerHTML = n[k + 1];
+            div.appendChild(p);
+          }
+        }
+      }
+    }
+  }
+})
+window.addEventListener('load', function () {
+  var ul = document.querySelector('.range .range02 ul');
+  console.log(ul);
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', "http://124.223.161.139:8000/range02");
+  xhr.send();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        var response = JSON.parse(xhr.response);
+        for (var i = 0; i < response.length; i++) {
+          var n = response[i].runoob_title.split("$");
+          var li = document.createElement('li');
+          ul.appendChild(li);
+          var a = document.createElement('a');
+          a.href = "javascript:;";
+          li.appendChild(a);
+          var span = document.createElement('span');
+          var img = document.createElement('img');
+          span.innerHTML = i + 1;
+          img.src = n[0];
+          a.appendChild(span);
+          a.appendChild(img);
+          var div = document.createElement('div');
+          div.className = 'topic';
+          a.appendChild(div);
+          for (var k = 0; k < n.length - 1; k++) {
+            var p = document.createElement('p');
+            p.innerHTML = n[k + 1];
+            div.appendChild(p);
+          }
+        }
+      }
+    }
+  }
+})
+window.addEventListener('load', function () {
+  var ul = document.querySelector('.range .range03 ul');
+  console.log(ul);
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', "http://124.223.161.139:8000/range03");
+  xhr.send();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        var response = JSON.parse(xhr.response);
+        for (var i = 0; i < response.length; i++) {
+          var n = response[i].runoob_title.split("$");
+          var li = document.createElement('li');
+          ul.appendChild(li);
+          var a = document.createElement('a');
+          a.href = "javascript:;";
+          li.appendChild(a);
+          var span = document.createElement('span');
+          var img = document.createElement('img');
+          span.innerHTML = i + 1;
+          img.src = n[0];
+          a.appendChild(span);
+          a.appendChild(img);
+          var div = document.createElement('div');
+          div.className = 'topic';
+          a.appendChild(div);
+          for (var k = 0; k < n.length - 1; k++) {
+            var p = document.createElement('p');
+            p.innerHTML = n[k + 1];
+            div.appendChild(p);
+          }
+        }
+      }
+    }
+  }
 })

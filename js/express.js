@@ -26,9 +26,10 @@ app.get('/login', (request, response) => {
         if (b) {
             response.send('-1');
         } else if (results[0].pass == query.pass) {
-            response.send('0');
+            response.send('-2');
         } else {
-            response.send('1');
+            response.send(JSON.stringify(results.theme));
+            console.log(JSON.stringify(results.theme));
         }
     })
 });
@@ -70,7 +71,7 @@ app.get('/regist', (request, response) => {
         if (!b) {
             response.send('-1');
         } else {
-            let sql = "insert into tb_usr(name,pass)VALUES(" + query.name + "," + query.pass + ")";
+            let sql = "insert into tb_usr(name,pass,theme)VALUES(" + query.name + "," + query.pass + "," + query.theme + ")";
             connection.query(sql);
             response.send('0');
         }
@@ -95,7 +96,7 @@ app.get('/search', (request, response) => {
             }
             console.log(back);
             response.send(JSON.stringify(back));
-        }else {
+        } else {
             response.send(JSON.stringify([]));
         }
     })
@@ -111,7 +112,44 @@ app.get('/recommend', (request, response) => {
         response.send(JSON.stringify(results));
     })
 });
-
+app.get('/range01', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    var sql = "select * from range01";
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        response.send(JSON.stringify(results));
+    })
+});
+app.get('/range02', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    var sql = "select * from range02";
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        response.send(JSON.stringify(results));
+    })
+});
+app.get('/range03', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    var sql = "select * from range0";
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        response.send(JSON.stringify(results));
+    })
+});
+app.get('/theme', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', "*");
+    const url = request.url;
+    const method = request.method;
+    const query = querystring.parse(url.split('?')[1]);
+    var sql = "update tb_usr set theme=? where name=?"
+    connection.query(sql);
+});
 app.listen(8000, () => {
     console.log('服务已经启动,8000端口监听中');
 })
